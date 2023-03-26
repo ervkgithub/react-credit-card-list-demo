@@ -22,7 +22,6 @@ export const DebitCard = () => {
 	return (
 		<div className="mt-50 layout-column justify-content-center align-items-center" >
 			<div className="card outlined" style={{ width: '1000px' }}>
-				<div data-testid="debit-card">
 					<h3 style={{ textAlign: 'center' }}>Card Details</h3>
 					<br />
 					{!unMaskCardDetials &&
@@ -66,7 +65,6 @@ export const DebitCard = () => {
 							}
 						</div>
 					}
-				</div>
 				<div>
 					<h3 style={{ textAlign: "center" }}>Cards List</h3>
 					<div className="debit-card-list" data-testid="debit-card-list">

@@ -87,15 +87,15 @@
 	width: 250px;
 }
 
-.debit-card .debit-card-body{
+.card .debit-card-body{
 	display: none;
 }
 
-.debit-card .debit-card-body.active{
+.card .debit-card-body.active{
 	display: block;
 }
 
 .activeCTA{
-	background-color: green;
+	background-color: darkgoldenrod;
 }
 
