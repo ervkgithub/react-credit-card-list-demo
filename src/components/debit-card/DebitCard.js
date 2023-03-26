@@ -3,10 +3,10 @@ import "./DebitCard.css"
 import cards from "../../cards.json"
 export const DebitCard = () => {
 
-	const [cardDetailActive, setCardDetailActive] = useState(1);
+	const [cardDetailActive, setCardDetailActive] = useState(0);
 	const [unMaskCardDetials, setUnMaskCardDetials] = useState(false);
 	const cardDetails = (index) => {
-		setCardDetailActive(index + 1);
+		setCardDetailActive(index);
 		setUnMaskCardDetials(false);
 	}
 
@@ -31,7 +31,7 @@ export const DebitCard = () => {
 							{
 								cards.map((card, index) => {
 									return (
-										<div onClick={unMaskDetails} key={index} id={index + 1} className={`debit-card-body ${index + 1 === cardDetailActive ? 'active' : ''}`} data-testid="debit-card-body">
+										<div onClick={unMaskDetails} key={index} id={index} className={`debit-card-body ${index === cardDetailActive ? 'active' : ''}`} data-testid="debit-card-body">
 											<p className="debit-card-bank" data-testid="debit-card-bank-name">{card.bank}</p>
 											<p className="debit-card-no" data-testid="debit-card-no">{card.number.slice(0, 4)} XXXX XXXX XXXX</p>
 											<br />
@@ -51,7 +51,7 @@ export const DebitCard = () => {
 							{
 								cards.map((card, index) => {
 									return (
-										<div onClick={unMaskDetails} key={index} id={index + 1} className={`debit-card-body ${index + 1 === cardDetailActive ? 'active' : ''}`} data-testid="debit-card-body">
+										<div onClick={unMaskDetails} key={index} id={index} className={`debit-card-body ${index === cardDetailActive ? 'active' : ''}`} data-testid="debit-card-body">
 											<p className="debit-card-bank" data-testid="debit-card-bank-name">{card.bank}</p>
 											<p className="debit-card-no" data-testid="debit-card-no">{formatCreditCardNumber(card.number)}</p>
 											<br />
@@ -74,7 +74,7 @@ export const DebitCard = () => {
 						{
 							cards.map((card, index) => {
 								return (
-									<div onClick={() => cardDetails(index)} key={index} className={`list-card ${index + 1 === cardDetailActive ? 'activeCTA' : ''}`} data-testid={`list-card-${index + 1}`}><p className="list-card-title">Card {index + 1}</p></div>
+									<div onClick={() => cardDetails(index)} key={index} className={`list-card ${index === cardDetailActive ? 'activeCTA' : ''}`} data-testid={`list-card-${index}`}><p className="list-card-title">Card {index + 1}</p></div>
 								)
 							})}
 					</div>
